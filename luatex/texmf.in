@@ -1,0 +1,112 @@
+% -------------------
+% Make Kpathsea Happy
+% -------------------
+GFFONTS      = /nonesuch
+PKFONTS      = /nonesuch
+GLYPHFONTS   = /nonesuch
+TFMFONTS     = /nonesuch
+AFMFONTS     = /nonesuch
+MFBASES      = /nonesuch
+BIBINPUTS    = /nonesuch
+BSTINPUTS    = /nonesuch
+TEXMFDBS     = /nonesuch
+MPMEMS       = /nonesuch
+MFTINPUTS    = /nonesuch
+MFPOOL       = /nonesuch
+MPPOOL       = /nonesuch
+MPSUPPORT    = /nonesuch
+OCPINPUTS    = /nonesuch
+OPLFONTS     = /nonesuch
+OTPINPUTS    = /nonesuch
+OVPFONTS     = /nonesuch
+TEXPSHEADERS = /nonesuch
+TEXDOCS      = /nonesuch
+TEXPOOL      = /nonesuch
+TEXSOURCES   = /nonesuch
+TRFONTS      = /nonesuch
+VFFONTS      = /nonesuch
+TEXCONFIG    = /nonesuch
+INDEXSTYLE   = /nonesuch
+T42FONTS     = /nonesuch
+MISCFONTS    = /nonesuch
+WEBINPUTS    = /nonesuch
+CWEBINPUTS   = /nonesuch
+ENCFONTS     = /nonesuch
+CMAPFONTS    = /nonesuch
+SFDFONTS     = /nonesuch
+PDFTEXCONFIG = /nonesuch
+LIGFONTS     = /nonesuch
+TEXMFSCRIPTS = /nonesuch
+FONTFEATURES = /nonesuch
+FONTCIDMAPS  = /nonesuch
+MLBIBINPUTS  = /nonesuch
+MLBSTINPUTS  = /nonesuch
+RISINPUTS    = /nonesuch
+BLTXMLINPUTS = /nonesuch
+% ---------------------------
+% Search Path and Directories
+% ---------------------------
+TEXMFROOT     = $SELFAUTOPARENT
+TEXMFDIST     = $TEXMFROOT/texmf
+TEXMFHOME     = ~/.texmf
+TEXMFVAR      = $TEXMFHOME/cache
+TEXMF         = {$TEXMFHOME,$TEXMFDIST}
+TEXMFCACHE    = $TEXMFVAR
+WEB2C         = $TEXMF/web2c
+TEXMFDOTDIR   = .
+TEXINPUTS     = $TEXMFDOTDIR;$TEXMF/generic//
+LUAINPUTS     = $TEXINPUTS
+CLUAINPUTS    = $LUAINPUTS
+MFINPUTS      = $TEXMFDOTDIR;$TEXMF/metafont//
+MPINPUTS      = $TEXMFDOTDIR;$TEXMF/metapost//
+TEXFORMATS    = $TEXMFDOTDIR;$TEXMF/web2c{/$engine,}
+TEXFONTMAPS   = $TEXMFDOTDIR;$TEXMF/fonts/map/{$progname,}//
+OSFONTDIR     = {/System,}/Library/Fonts//
+T1FONTS       = $TEXMFDOTDIR;$TEXMF/fonts/type1//;$OSFONTDIR//
+TTFONTS       = $TEXMFDOTDIR;$TEXMF/fonts/truetype//;$OSFONTDIR//
+OPENTYPEFONTS = $TEXMFDOTDIR;$TEXMF/fonts/opentype//;$OSFONTDIR//
+OFMFONTS      = $TEXMFDOTDIR;$TEXMF/fonts/{ofm,tfm}//
+OVFFONTS      = $TEXMFDOTDIR;$TEXMF/fonts/{ovf,vf}//
+TEXMFCNF      = $SELFAUTODIR/web2c
+TEXMFOUTPUT   = /tmp
+MISSFONT_LOG  = missfont.log
+% -------
+% Options
+% -------
+try_std_extension_first = t
+shell_escape            = p
+shell_escape_commands   = f
+openin_any              = a
+openout_any             = p
+parse_first_line        = t
+log_openout             = t
+file_line_error_style   = t
+texmf_casefold_search   = 1
+% -------------
+% Sizes for TeX
+% -------------
+main_memory      = 5000000
+extra_mem_top    = 0
+extra_mem_bot    = 0
+font_mem_size    = 8000000
+font_max         = 9000
+hash_extra       = 600000
+pool_size        = 6250000
+string_vacancies = 90000
+max_strings      = 500000
+pool_free        = 47500
+strings_free     = 100
+buf_size         = 200000
+trie_size        = 1100000
+hyph_size        = 8191
+nest_size        = 1000
+max_in_open      = 15
+param_size       = 20000
+save_size        = 200000
+stack_size       = 10000
+ocp_buf_size     = 500000
+ocp_stack_size   = 10000
+ocp_list_size    = 1000
+error_line       = 79
+half_error_line  = 50
+max_print_line   = 79
