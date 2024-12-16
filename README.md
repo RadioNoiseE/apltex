@@ -21,7 +21,8 @@ Tested on Darwin (Sequoia) and Linux (Gentoo), aplTeX has minimal dependencies:
 ### Procedure
 
 1. **Build**: Run `./make/build.sh` to create the `texmf` directory containing the engine, fonts, and dumped format.
-2. **Install**: Use `./make/install.sh` to move `texmf` to `/usr/local/lib` and symlink the LuaTeX executable to `/usr/local/bin`. Note: The directory must always be named `texmf`, and can be moved to any directory.
+2. **Install**: Use `./make/install.sh` to move `texmf` to `/usr/local/lib` and install the LuaTeX executable.
+   - NB, you can actually put `texmf` anywhere on your disk, but its name should not be changed, and you are recommended to symlink the `texmf/web2c/luahbtex` executable to your `$PATH`.
 3. **Clean (Optional)**: Run `./make/clean.sh` to remove the built `texmf` directory, locks for compile-time directories, and various logs.
 
 Do not run the scripts as root as you will be prompted during installation to grant access when necessary.
@@ -55,7 +56,7 @@ texmf
 
 ### Kpathsea Configuration
 
-aplTeX uses a modified TeX and MetaFont directory tree structure, differing from the standard TDS:
+aplTeX uses a modified TeX and MetaFont directory tree structure, differing from the standard TDS slightly:
 
 - **Compile-time**: `luatex/texmf.in`.
 - **Run-time**: `web2c/texmf.cnf`.
