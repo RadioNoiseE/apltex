@@ -30,4 +30,4 @@ sleep 6
 cd "$(realpath $(dirname "$0"))/.."
 
 sudo cp -r texmf /usr/local/lib
-sudo ln -sf /usr/local/lib/texmf/web2c/luajithbtex /usr/local/bin/luatex
+sudo ln -sf /usr/local/lib/texmf/web2c/luahbtex /usr/local/bin/luatex

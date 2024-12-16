@@ -9,7 +9,7 @@ fi
 wkspc=`pwd`
 parnt=$wkspc/..
 flags=(
-    --jithb
+    --luahb  # --jithb
     --clang
     --parallel
 )
@@ -20,7 +20,7 @@ cd luatex
 cp $wkspc/texmf.in source/texk/kpathsea/texmf.cnf
 ./build.sh "${flags[@]}"
 
-cp build-clang/texk/web2c/luajithbtex $parnt/texmf/web2c
+cp build-clang/texk/web2c/luahbtex $parnt/texmf/web2c
 
 cd $wkspc
 touch LOCK

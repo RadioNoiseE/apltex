@@ -12,7 +12,7 @@ dumpr=$parnt/texmf/web2c/
 
 export PATH=$dumpr:$PATH
 
-[ -d $parnt/texmf/web2c ] && luajithbtex -ini luatex.ini && cp luatex.fmt $parnt/texmf/web2c
+[ -d $parnt/texmf/web2c ] && luahbtex -ini luatex.ini && cp luatex.fmt $parnt/texmf/web2c
 
 cd $wkspc
 touch LOCK

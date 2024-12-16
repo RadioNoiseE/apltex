@@ -18,4 +18,5 @@ cd "$(realpath $(dirname "$0"))/.."
 rm */LOCK &
 rm -r texmf &
 rm -rf luatex/luatex &
-rm fmtdump/*.log
+rm fmtdump/*.log &
+rm fmtdump/*.fmt
