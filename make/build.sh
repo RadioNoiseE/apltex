@@ -18,7 +18,6 @@ cd "$(realpath $(dirname "$0"))/.."
 mkdir texmf
 mkdir texmf/web2c
 mkdir texmf/fonts
-mkdir texmf/generic
 
 cd luatex
 ./comp.sh
