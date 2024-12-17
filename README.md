@@ -2,7 +2,7 @@
 
 aplTeX is a minimal TeX distribution built on LuaTeX and Web2C. It includes:
 
-- **Engine**: Statically linked LuaTeX compiled with HarfBuzz and LuaJIT.
+- **Engine**: Statically linked LuaTeX compiled with HarfBuzz and Lua5.3.
 - **Fonts**: TFM and Type1 (Computer Modern, AMSFonts, Manual fonts).
 - **Format**: Unicode aware plain-LuaTeX (original `plain.tex` modified for eTeX, pdfTeX and LuaTeX).
 
@@ -29,7 +29,7 @@ Do not run the scripts as root as you will be prompted during installation to gr
 
 ## Post-Installation
 
-Look in the [releases](https://github.com/RadioNoiseE/apltex/releases) page for some useful packaged and ready-to-use macros.
+Look in the [releases](https://github.com/RadioNoiseE/apltex/releases) page for some useful packaged and ready-to-use macros to support OpenType fonts, diagram drawing with the builtin MetaPost library, etc.
 
 You can also manually add packages or formats. The directory structure looks like:
 
@@ -47,7 +47,7 @@ texmf
 ├── generic             % TeX macros, Lua scripts, etc
 ├── metapost            % MetaPost macros, inputs, etc
 └── web2c               % engine executables, TEXMF configuration, dumped formats
-    ├── luajithbtex
+    ├── luahbtex
     ├── luatex.fmt
     └── texmf.cnf
 ```
