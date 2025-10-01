@@ -29,5 +29,8 @@ sleep 6
 
 cd "$(realpath $(dirname "$0"))/.."
 
+[ -d /usr/local/lib ] || mkdir -p /usr/local/lib
+[ -d /usr/local/lib/texmf ] && mv /usr/local/lib/texmf /usr/local/lib/texmf.bak
+
 sudo cp -r texmf /usr/local/lib
 sudo ln -sf /usr/local/lib/texmf/web2c/luahbtex /usr/local/bin/luatex
