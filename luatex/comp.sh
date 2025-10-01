@@ -14,7 +14,7 @@ flags=(
     --parallel
 )
 
-git clone -b 1.23.0 --depth 1 https://gitlab.lisn.upsaclay.fr/texlive/luatex.git
+git clone -b 1.24.0 --depth 1 https://gitlab.lisn.upsaclay.fr/texlive/luatex.git
 
 cd luatex
 cp $wkspc/texmf.in source/texk/kpathsea/texmf.cnf
