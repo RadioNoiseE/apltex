@@ -73,6 +73,6 @@ For questions or inquiries, feel free to open an issue or contact me via email.
 
 ## License
 
-This project is licensed under the Clause-3 BSD License. The current version is `1.0.2`.
+This project is licensed under the Clause-3 BSD License. The current version is `2.0.1`.
 
-Some files under the directory `amsfonts` and `fmtdump` are provided as-is, subject to their respective licenses. Refer to the `readme.txt` files under these directories.
+Some files under the directory `amsfonts` and `fmtdump` as well as the in distributed `dist.tar.gz` are provided as-is, subject to their respective licenses. Refer to the `readme.txt` files under these directories.
