@@ -13,6 +13,6 @@ case "$KERNEL" in
 esac
 
 cp texmf.cnf ../texmf/web2c
-sed -i "/OSFONTDIR/ s|?|${OSFONTDIR}|" ../texmf/web2c/texmf.cnf
+sed -i "/OSFONTDIR/ s|?|$OSFONTDIR|" ../texmf/web2c/texmf.cnf
 
 touch LOCK
