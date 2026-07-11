@@ -23,7 +23,7 @@ case "$(uname)" in
     *) echo "ERR: unsupported system, aborting..." >&2 && exit 1 ;;
 esac
 
-mkdir texmf
+[ -d texmf ] || mkdir texmf
 
 pushd luatex
 ./compile.sh
