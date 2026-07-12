@@ -8,11 +8,17 @@ if [ -f LOCK ]; then
 fi
 
 case "$KERNEL" in
-    linux) OSFONTDIR='/usr{/local,}/share/fonts//' ;;
-    darwin) OSFONTDIR='{/System,}/Library/Fonts//' ;;
+    linux)
+        SEDINLINE=(sed -i)
+        OSFONTDIR='/usr{/local,}/share/fonts//'
+        ;;
+    darwin)
+        SEDINLINE=(sed -i '')
+        OSFONTDIR='{/System,}/Library/Fonts//'
+        ;;
 esac
 
 cp texmf.cnf ../texmf/web2c
-sed -i "/OSFONTDIR/ s|?|$OSFONTDIR|" ../texmf/web2c/texmf.cnf
+"${SEDINLINE[@]}" "/OSFONTDIR/ s|?|$OSFONTDIR|" ../texmf/web2c/texmf.cnf
 
 touch LOCK
