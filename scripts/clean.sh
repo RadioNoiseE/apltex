@@ -17,7 +17,7 @@ realpath() {
 
 cd "$(realpath $(dirname "$0"))/.."
 
-rm -r texmf
-rm -rf luatex/{build,texlive*}
-rm format/{*.log,*.fmt}
+rm -r texmf &
+rm -rf luatex/{build,texlive*} &
+rm format/{*.log,*.fmt} &
 rm */LOCK
