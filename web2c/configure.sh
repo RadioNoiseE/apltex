@@ -7,18 +7,17 @@ if [ -f LOCK ]; then
     exit 0
 fi
 
-case "$KERNEL" in
-    linux)
-        SEDINLINE=(sed -i)
-        OSFONTDIR='/usr{/local,}/share/fonts//'
-        ;;
-    darwin)
-        SEDINLINE=(sed -i '')
-        OSFONTDIR='{/System,}/Library/Fonts//'
-        ;;
+case "$USERLAND" in
+    gnu) sed() { command sed -i "$@"; } ;;
+    bsd) sed() { command sed -i '' "$@"; } ;;
+esac
+
+case "$SYSTEM" in
+    unix) OSFONTDIR='/usr{/local,}/share/fonts//' ;;
+    darwin) OSFONTDIR='{/System,}/Library/Fonts//' ;;
 esac
 
 cp texmf.cnf ../texmf/web2c
-"${SEDINLINE[@]}" "/OSFONTDIR/ s|?|$OSFONTDIR|" ../texmf/web2c/texmf.cnf
+sed "/OSFONTDIR/ s|?|$OSFONTDIR|" ../texmf/web2c/texmf.cnf
 
 touch LOCK

@@ -17,26 +17,44 @@ realpath() {
 
 cd "$(realpath $(dirname "$0"))/.."
 
-case "$(uname)" in
-    Linux) export KERNEL=linux ;;
-    Darwin) export KERNEL=darwin ;;
+if [ -z "${USERLAND:-}" ]; then
+    case "$(uname)" in
+        Linux) USERLAND=gnu ;;
+        Darwin|*BSD) USERLAND=bsd ;;
+    esac
+fi
+
+case "$USERLAND" in
+    gnu|bsd) export USERLAND ;;
+    *) echo "ERR: unsupported userland, aborting..." >&2 && exit 1 ;;
+esac
+
+if [ -z "${SYSTEM:-}" ]; then
+    case "$(uname)" in
+        Linux|*BSD) SYSTEM=unix ;;
+        Darwin) SYSTEM=darwin ;;
+    esac
+fi
+
+case "$SYSTEM" in
+    unix|darwin) export SYSTEM ;;
     *) echo "ERR: unsupported system, aborting..." >&2 && exit 1 ;;
 esac
 
 [ -d texmf ] || mkdir texmf
 
-pushd luatex
+cd luatex
 ./compile.sh
-popd
+cd ..
 
-pushd web2c
+cd web2c
 ./configure.sh
-popd
+cd ..
 
-pushd amsfonts
+cd amsfonts
 ./install.sh
-popd
+cd ..
 
-pushd format
+cd format
 ./dump.sh
-popd
+cd ..
